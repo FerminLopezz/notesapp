@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:notes/clean/appBar.dart';
+import 'package:notes/clean/Widgets/appBar.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

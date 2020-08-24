@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notes/clean/gradient_back.dart';
+import 'package:notes/clean/Screens/home_screen.dart';
+import 'package:notes/clean/Screens/record_screen.dart';
+import 'package:notes/clean/Screens/write_screen.dart';
 
 class Notes extends StatelessWidget {
   @override
@@ -14,15 +16,15 @@ class Notes extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.keyboard, color: Color(0xFFEBCC07)),
-                title: Text("Write")
+                title: Text("Write", style: TextStyle(color: Color(0xFFEBCC07)))
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person, color: Color(0xFFEBCC07)),
-              title: Text("Home")
+              title: Text("Home", style: TextStyle(color: Color(0xFFEBCC07)))
             ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.mic, color: Color(0xFFEBCC07)),
-                title: Text("Record")
+                title: Text("Record", style: TextStyle(color: Color(0xFFEBCC07)))
             ),
           ]
         ),
@@ -31,23 +33,20 @@ class Notes extends StatelessWidget {
           switch (index) {
             case 0:
               return CupertinoTabView(
-                builder: (BuildContext context) => GradientBack(height: 30.0),
+                builder: (BuildContext context) => TextScreen(),
               );
               break;
             case 1:
               return CupertinoTabView(
-                builder: (BuildContext context) => GradientBack(height: 60.0),
+                builder: (BuildContext context) => HomeScreen(),
               );
               break;
             case 2:
               return CupertinoTabView(
-                builder: (BuildContext context) {
-                  return GradientBack(height: 80.0);
-                },
+                builder: (BuildContext context) => RecordScreen()
               );
               break;
           }
-
         },
       ),
     );
